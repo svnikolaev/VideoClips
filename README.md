@@ -4,10 +4,12 @@
 
 ## how to run the app
 
+- run `run.ps1`
+
 - powershell run:
 
 ```sh
-($env:FLASK_APP="webapp.server") -and ($env:FLASK_ENV="development") -and ($env:FLASK_DEBUG=1) -and (flask run)
+$env:FLASK_APP="webapp.server"; $env:FLASK_ENV="development"; $env:FLASK_DEBUG=1; flask run
 ```
 
 - cmd run:
