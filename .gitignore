@@ -131,3 +131,7 @@ dmypy.json
 
 # Visual studio code
 .vscode/
+
+# Configs scripts and util files
+config.py
+*.db
