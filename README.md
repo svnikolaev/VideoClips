@@ -4,7 +4,7 @@
 
 ## how to run the app
 
-- run `run.ps1`
+- run `scripts\server.ps1`
 
 - powershell run:
 
@@ -17,3 +17,9 @@ $env:FLASK_APP="webapp.server"; $env:FLASK_ENV="development"; $env:FLASK_DEBUG=1
 ```sh
 set FLASK_APP=webapp.server&& set FLASK_ENV=development && set FLASK_DEBUG=1 && flask run
 ```
+
+## another actions
+
+* script/bootstrap - installs/updates all dependencies
+* script/update - updates a project to run at its current version
+* script/server - starts app
