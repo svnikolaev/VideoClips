@@ -20,6 +20,6 @@ set FLASK_APP=webapp.server&& set FLASK_ENV=development && set FLASK_DEBUG=1 && 
 
 ## another actions
 
-* script/bootstrap - installs/updates all dependencies
-* script/update - updates a project to run at its current version
-* script/server - starts app
+- script/bootstrap - installs/updates all dependencies
+- script/update - updates a project to run at its current version
+- script/server - starts app
