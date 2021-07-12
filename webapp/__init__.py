@@ -1,5 +1,5 @@
 from flask import Flask
-# from flask_login import LoginManager
+from flask_login import LoginManager
 from flask_migrate import Migrate
 from webapp.db import db
 from webapp.user.models import User
@@ -13,15 +13,15 @@ def create_app():
     db.init_app(app)
     Migrate(app, db, render_as_batch=True)
 
-    # login_manager = LoginManager()
-    # login_manager.init_app(app)
-    # login_manager.login_view = 'user.login'
+    login_manager = LoginManager()
+    login_manager.init_app(app)
+    login_manager.login_view = 'user.login'
 
     app.register_blueprint(clip_blueprint)
     app.register_blueprint(user_blueprint)
 
-    # @login_manager.user_loader
-    # def load_user(user_id):
-    #     return User.query.get(user_id)
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(user_id)
 
     return app

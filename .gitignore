@@ -134,4 +134,6 @@ dmypy.json
 
 # Configs scripts and util files
 config.py
+create_admin.py
+create_db.py
 *.db
