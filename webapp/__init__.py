@@ -8,6 +8,7 @@ from webapp.user.views import blueprint as user_blueprint
 from webapp.playlist.views import blueprint as playlist_blueprint
 
 
+
 def create_app():
     app = Flask(__name__)
     app.config.from_pyfile('config.py')
@@ -21,6 +22,7 @@ def create_app():
     app.register_blueprint(clip_blueprint)
     app.register_blueprint(user_blueprint)
     app.register_blueprint(playlist_blueprint)
+
 
     @login_manager.user_loader
     def load_user(user_id):
