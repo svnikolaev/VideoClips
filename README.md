@@ -54,6 +54,7 @@ set FLASK_APP=webapp&& set FLASK_ENV=development && set FLASK_DEBUG=1 && flask r
         bool ispublic
     }
     FAVORITE {
+        int id
         int userID
         int playlistID
     }

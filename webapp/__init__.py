@@ -3,6 +3,9 @@ from flask_login import LoginManager
 from flask_migrate import Migrate
 from webapp.db import db
 from webapp.user.models import User
+from webapp.clip.models import Clip
+from webapp.playlist.models import Playlist
+from webapp.favorite.models import Favorite
 from webapp.clip.views import blueprint as clip_blueprint
 from webapp.user.views import blueprint as user_blueprint
 from webapp.playlist.views import blueprint as playlist_blueprint
