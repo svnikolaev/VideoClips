@@ -19,6 +19,13 @@
                         Главная страница
                     </a>
                 </li>
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('playlist.all_playlist') }}">
+                        Мои плейлисты
+                    </a>
+                </li>
+                {% endif %}
             </ul>
             <form class="d-flex">
                 <input
@@ -33,6 +40,17 @@
             </form>
             <ul class="navbar-nav">
                 {% if current_user.is_authenticated %}
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ current_user.username }}
+                        </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu2">
+                                <li><a class="dropdown-item" type="button" href="{{ url_for('playlist.all_playlist') }}">Мои плейлисты</a></li>
+                                <li><a class="dropdown-item" type="button" href="/">Личный кабинет</a></li>
+                                <li><a class="dropdown-item" type="button" href="{{ url_for('user.logout') }}">Выйти</a></li>
+                            </ul>
+                        </div>
+                      </div>
                     <li class="nav-item">
                         <span class="nav-link">{{ current_user.username }}</span>
                     <li class="nav-item">
