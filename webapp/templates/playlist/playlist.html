@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}   
+<div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
+        <h1 class="bd-title">
+            {{ title }}
+        </h1>
+        <a type="button" class="btn btn-primary" href="{{ url_for('clip.add_clip') }}">Добавить клип</a><br><br>
+        {% for clip in clip_list %}
+        <li><a href='{{ clip.link }}'>{{ clip.name }}</a><br></li>
+        {% endfor %}
+    </ul>
+    </div>
+    <div class="col-2">
+    </div>
+</div>
+    
+{% endblock %}

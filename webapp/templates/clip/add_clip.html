@@ -15,7 +15,7 @@
     </div>
     <div class="col-8">
         <form
-            action="{{ url_for('playlist.prosses_add_playlist') }}"
+            action="{{ url_for('clip.prosses_add_clip') }}"
             method="POST"
         >
             <h1 class="bd-title">
@@ -23,13 +23,17 @@
             </h1>
                 {{ form.hidden_tag() }}
             <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">{{ form.pl_name.label }}</label>
-                {{ form.pl_name() }}
+            <label for="exampleInputEmail1" class="form-label">{{ form.clip_name.label }}</label>
+                {{ form.clip_name() }}
             </div>
             <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">{{ form.comment.label }}</label>
-                {{ form.comment() }}
+            <label for="exampleInputPassword1" class="form-label">{{ form.link.label }}</label>
+                {{ form.link() }}
             </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">{{ form.playlist_id.label }}</label>
+                    {{ form.playlist_id() }}
+                </div>
             <div class="mb-3">
                 {{ form.submit() }}
             </div>
